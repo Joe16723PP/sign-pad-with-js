@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- pdf js -->
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <!-- pdf-lib -->
+    <script src="https://unpkg.com/pdf-lib@1.5.0"></script>
+    <!-- download js -->
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <!-- internal -->
+    <script src="scripts/index.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="onInit()">
+
+    <h1>Draw signature in pdf</h1>
+    <div class="action-group">
+        <button onclick="onPageChanged(false)">previous</button>
+        <span>Page: <span id="current_page_number"></span> / <span id="max_page"></span></span>
+        <button onclick="onPageChanged(true)">next</button>
+        <button id="save_sign">save signature</button>
+
+    </div>
+    <div class="canvas-container">
+        <canvas class="pdf first-layer"></canvas>
+        <canvas class="pdf second-layer"></canvas>
+    </div>
+    <button id="preview">preview</button>
+    <br>
+    <iframe id="frame_pdf" frameborder="0"></iframe>
+    <br>
+
+</body>
+
+</html>
